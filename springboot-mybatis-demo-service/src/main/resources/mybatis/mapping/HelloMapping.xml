@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.guizhou001.hr.mapper.HelloMapper">
+
+    <insert id="insert" parameterType="cn.guizhou001.hr.model.Hello">
+        INSERT INTO hello (name,age) VALUES (#{name},#{age})
+    </insert>
+
+    <select id="getAll" resultType="cn.guizhou001.hr.model.Hello">
+        select id,name,age from hello
+    </select>
+
+    <!--
+    <resultMap id="BaseMap" type="cn.guizhou001.hr.model.Hello">
+        <id column="id" property="id"></id>
+        <result column="user_name" property="name"></result>
+        <result column="age" property="age"></result>
+    </resultMap>
+    <select id="getAll1" resultMap="BaseMap">
+        select user_name,age from hello
+    </select>
+    -->
+</mapper>
